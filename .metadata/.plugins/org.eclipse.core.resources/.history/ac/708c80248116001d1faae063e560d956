@@ -1,0 +1,15 @@
+package br.edu.infnet.model.domain;
+
+public class Cliente {
+
+	private String nome;
+	private String cpf;
+	private String email;
+	private String usuario;
+	
+	
+	@Override
+	public String toString() {
+		return usuario + "/" + nome + "/" + cpf + "/" + email;  
+	}
+}

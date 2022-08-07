@@ -1,0 +1,43 @@
+package br.edu.infnet.model.domain;
+
+public class Produto {
+
+	private String nome;
+	private int tipo;
+	private double valor;
+	private int codigo;
+	
+	
+	@Override
+	public String toString() {
+		return nome + " " + tipo + " " + valor + " " + codigo;  
+	}
+	
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public int getTipo() {
+		return tipo;
+	}
+	public void setTipo(int tipo) {
+		this.tipo = tipo;
+	}
+	public double getValor() {
+		return valor;
+	}
+	public void setValor(double valor) {
+		this.valor = valor;
+	}
+	public int getCodigo() {
+		return codigo;
+	}
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
+	}
+	
+	
+	
+}

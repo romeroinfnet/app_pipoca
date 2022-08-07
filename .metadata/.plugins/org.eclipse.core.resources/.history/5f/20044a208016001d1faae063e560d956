@@ -1,0 +1,7 @@
+package br.edu.infnet.model.domain;
+
+public class Salgado {
+
+	private String sabor;
+	private int tamanho;
+}

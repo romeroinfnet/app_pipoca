@@ -1,0 +1,10 @@
+package br.edu.infnet.model.domain;
+
+public class Produto {
+
+	private String nomer;
+	private int tipo;
+	private float valor;
+	private int codigo;
+	
+}
