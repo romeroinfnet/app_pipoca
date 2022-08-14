@@ -1,0 +1,25 @@
+package br.edu.infnet.app_pipoca;
+
+import org.springframework.boot.ApplicationArguments;
+import org.springframework.boot.ApplicationRunner;
+import org.springframework.stereotype.Component;
+
+import br.edu.infnet.app_pipoca.model.domain.Ligth;
+
+
+@Component
+public class LigthTeste implements ApplicationRunner{
+
+	@Override
+	public void run(ApplicationArguments args) throws Exception {
+		
+		Ligth l1 = new Ligth();
+		l1.setSabor("Chocolate 80%");
+		l1.setTamanho(500);
+		
+		AppProduto.relatorio("Produto adicionado:", l1);
+		System.out.println(l1);
+		
+	}
+
+}
