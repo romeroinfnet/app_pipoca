@@ -1,6 +1,7 @@
 package br.edu.infnet.app_pipoca.model.domain;
 
 import br.edu.infnet.app_pipoca.interfaces.IPrinter;
+import br.edu.infnet.app_pipoca.model.Exception.CpfInvalidoException;
 
 public class Cliente implements IPrinter{
 
@@ -8,8 +9,18 @@ public class Cliente implements IPrinter{
 	private String cpf;
 	private String email;
 	private String usuario;
+	private Integer id;
 	
-	public Cliente( String usuario, String nome, String cpf, String  email) {
+	public Cliente( String usuario, String nome, String cpf, String  email) throws CpfInvalidoException {
+		
+		if(cpf == null) {
+			throw new CpfInvalidoException("Não é possível aceitar o CPF nulo.");
+		}
+		
+		if(cpf.isEmpty()){
+			throw new CpfInvalidoException("O CPF deve ser informado.");
+		}
+		
 		this.nome = nome;
 		this.cpf = cpf;
 		this.email = email;
@@ -35,6 +46,15 @@ public class Cliente implements IPrinter{
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 

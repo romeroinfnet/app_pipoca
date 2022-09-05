@@ -19,7 +19,7 @@ public class Salgado extends Produto{
 	
 	@Override
 	public String toString() {
-		return sabor + " " + getTamanho();  
+		return "Nome: " + getNome() + " || Sabor: " + getSabor() + " || " + getTamanho() + "g ||  Valor com desconto: " + calcularValor();
 	}
 	
 	public String getSabor() {

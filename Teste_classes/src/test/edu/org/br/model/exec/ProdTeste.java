@@ -9,7 +9,7 @@ public class ProdTeste {
 		//produto1.setTipo(1);
 		produto1.setTamanho(2);
 
-		System.out.println(produto1.getTamanho());
+		//System.out.println(produto1.getTamanho());
 	}
 
 }
