@@ -35,7 +35,7 @@ public class Cliente implements IPrinter{
 	
 	@Override
 	public String toString() {
-		return usuario + " " + nome + " " + cpf + " " + email;  
+		return "Usuário: " + usuario + " Nome: " + nome + " CPF: " + cpf + " E-mail: " + email;  
 	}
 
 

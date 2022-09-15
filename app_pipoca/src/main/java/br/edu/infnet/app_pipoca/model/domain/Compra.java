@@ -2,6 +2,7 @@ package br.edu.infnet.app_pipoca.model.domain;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Set;
 
 import br.edu.infnet.app_pipoca.interfaces.IPrinter;
 
@@ -11,18 +12,12 @@ public class Compra implements IPrinter{
 	private String codigo;
 	private Cliente cliente;
 	private LocalDateTime data;
-	private List<Produto> produtos;
+	private Set<Produto> produtos;
 	private Integer id;
 	
-
 	public Compra(Cliente cliente) {
 		this.data = LocalDateTime.now();
 		this.cliente = cliente;
-	}
-	
-	@Override
-	public String toString() {
-		return " Cliente: "+ cliente + " Data: " + data + " Descrição: " + descricao + " Código do Produto:  " + codigo + " Lista de produtos: " + produtos;  
 	}
 	
 	@Override
@@ -32,6 +27,11 @@ public class Compra implements IPrinter{
 		System.out.println(this.toString());
 		System.out.println(" ");
 	}
+	
+	@Override
+	public String toString() {
+		return " Cliente: "+ cliente + " Data: " + data + " Descrição: " + descricao + " Código do Produto:  " + codigo + " Lista de produtos: " + produtos;  
+	}
 
 	public Integer getId() {
 		return id;
@@ -40,20 +40,21 @@ public class Compra implements IPrinter{
 		this.id = id;
 	}
 	
-	public List<Produto> getProdutos() {
+	public Set<Produto> getProdutos() {
 		return produtos;
 	}
 
-	public void setProdutos(List<Produto> produtos) {
+	public void setProdutos(Set<Produto> produtos) {
 		this.produtos = produtos;
 	}	
 	
-	public String getDescricao() {
+    public String getDescricao() {
 		return descricao;
 	}
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
+
 	
 	public String getCodigo() {
 		return codigo;

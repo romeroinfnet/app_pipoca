@@ -34,7 +34,7 @@
         <td>${s.sabor}</td>
         <td>${s.tamanho}</td>
         <td>${s.valor}</td>
-        <td><a href="/salgado/${id}/excluir">excluir</a></td>
+        <td><a href="/salgado/${s.id}/excluir">excluir</a></td>
       </tr>
       </c:forEach>
     </tbody>

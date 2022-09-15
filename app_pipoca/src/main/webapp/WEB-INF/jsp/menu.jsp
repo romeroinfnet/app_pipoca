@@ -21,13 +21,14 @@
 		<ul class="navbar-nav navbar-right">
 		<li class="nav-item">
  
- 			<li class="nav-item"><a class="nav-link" href="/index">Home</a></li>
- 
+ 			
+ 			<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+ 			
 		  	<li class="nav-item"><a class="nav-link" href="/cadastro/listaUsuario">Usuário</a></li>
 		  
 		 	<li class="nav-item"><a class="nav-link" href="/cliente/listaCliente">Cliente</a></li>
 		 	
-		 	<li class="nav-item"><a class="nav-link" href="/compra/listaCompra">Compra</a></li>
+		 	<li class="nav-item"><a class="nav-link" href="/WEB-INF/jsp/compra/listaCompra">Compra</a></li>
 		 	
 		 	<li class="nav-item"><a class="nav-link" href="/doce/listaDoce">Doce</a></li>
 		
@@ -39,8 +40,10 @@
 		 
 		 	<li class="nav-item"><a class="nav-link" href="/produto/listaProduto">Produto</a></li>
 		 	
-		 	<li class="nav-item"><a class="nav-link" href="/logout">Logout ${user}</a></li>
-
+	 	</ul>
+	 	<ul class="navbar-nav navbar-right">
+			<li class="nav-item">
+	 		<li class="nav-item"><a class="nav-link" href="/logout">Logout ${user.nome}</a></li>
 	 	</ul>
 	</div>
 </nav>

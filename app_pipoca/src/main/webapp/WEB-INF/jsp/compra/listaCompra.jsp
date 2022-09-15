@@ -46,9 +46,9 @@
  	  <c:forEach var="c" items="${lista}">
       <tr>
         <td>${c.codigo}</td>
-        <td>${c.discricao}</td>
+        <td>${c.descricao}</td>
         <td>${c.data}</td>
-        <td><a href="/compra/${id}/excluir">excluir</a></td>
+        <td><a href="/compra/${c.id}/excluir">excluir</a></td>
       </tr>
       </c:forEach>
     </tbody>

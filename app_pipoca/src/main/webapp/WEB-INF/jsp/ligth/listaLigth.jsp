@@ -34,7 +34,7 @@
         <td>${l.sabor}</td>
         <td>${l.tamanho}</td>
         <td>${l.valor}</td>
-        <td><a href="/ligth/${id}/excluir">excluir</a></td>
+        <td><a href="/ligth/${l.id}/excluir">excluir</a></td>
       </tr>
       </c:forEach>
     </tbody>

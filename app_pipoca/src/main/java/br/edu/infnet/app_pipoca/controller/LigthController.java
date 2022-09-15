@@ -26,6 +26,10 @@ public class LigthController {
 		mapLigth.put(ligth.getId(), ligth);
 		AppProduto.relatorio("Produto " + ligth.getNome() + " adicionado:", ligth);
 	}
+	
+	public static void excluir(Integer id) {
+		mapLigth.remove(id);
+	}
 
 	public static Collection<Ligth> retornarLista(){
 		return mapLigth.values();
@@ -37,11 +41,7 @@ public class LigthController {
 		return "/ligth/listaLigth";
 	}
 	
-	public static void excluir(Integer id) {
-		mapLigth.remove(id);
-	}
-	
-	@GetMapping(value = "/ligth/listaLigth/{id}/excluir")
+	@GetMapping(value = "/ligth/{id}/excluir")
 	public String exclusaoLigth(@PathVariable Integer id) {
 		excluir(id);
 		System.out.println("Realizada a exclusão com sucesso!");

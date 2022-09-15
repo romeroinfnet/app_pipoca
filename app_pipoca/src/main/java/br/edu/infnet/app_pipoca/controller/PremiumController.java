@@ -25,6 +25,10 @@ public class PremiumController {
 		AppProduto.relatorio("Produto " + premium.getNome() + " adicionado:", premium);
 	}
 	
+	public static void excluir(Integer id) {
+		mapPremium.remove(id);
+	}
+	
 	public static Collection<Premium> retornarLista(){
 		return mapPremium.values();
 	}
@@ -35,11 +39,7 @@ public class PremiumController {
 		return "/premium/listaPremium";
 	}
 	
-	public static void excluir(Integer id) {
-		mapPremium.remove(id);
-	}
-	
-	@GetMapping(value = "/premium/listaPremium/{id}/excluir")
+	@GetMapping(value = "/premium/{id}/excluir")
 	public String exclusaoPremium(@PathVariable Integer id) {
 		excluir(id);
 		System.out.println("Realizada a exclusão com sucesso!");

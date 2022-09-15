@@ -23,12 +23,12 @@
     </thead>
 	
     <tbody>
- 	  <c:forEach var="c" items="${listagem}">
+ 	  <c:forEach var="cl" items="${listagem}">
       <tr>
-        <td>${c.nome}</td>
-        <td>${c.cpf}</td>
-        <td>${c.email}</td>
-        <td><a href="/cliente/${id}/excluir">excluir</a></td>
+        <td>${cl.nome}</td>
+        <td>${cl.cpf}</td>
+        <td>${cl.email}</td>
+        <td><a href="/cliente/${cl.id}/excluir">excluir</a></td>
       </tr>
       </c:forEach>
     </tbody>

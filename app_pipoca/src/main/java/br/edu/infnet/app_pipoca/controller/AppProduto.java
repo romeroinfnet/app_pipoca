@@ -15,12 +15,12 @@ public class AppProduto {
 	}
 	
 	public static void main(String[] args) {
-		String dir = "c:/dev/";
-		String arq = "pedido.txt";
+		String dir = "C:/dev/";
+		String arq = "";
 		
 		try {
 			try {
-				FileReader fileReader = new FileReader(dir+arq);
+				FileReader fileReader = new FileReader(dir);
 				BufferedReader leitura = new BufferedReader(fileReader);
 				
 				String linha = leitura.readLine();

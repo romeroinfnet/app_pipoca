@@ -34,7 +34,7 @@
         <td>${pr.sabor}</td>
         <td>${pr.tamanho}</td>
         <td>${pr.valor}</td>
-        <td><a href="/premium/${id}/excluir">excluir</a></td>
+        <td><a href="/premium/${pr.id}/excluir">excluir</a></td>
       </tr>
       </c:forEach>
     </tbody>

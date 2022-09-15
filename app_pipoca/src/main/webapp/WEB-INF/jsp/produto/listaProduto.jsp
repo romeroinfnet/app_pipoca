@@ -25,12 +25,12 @@
     </thead>
 	
     <tbody>
- 	  <c:forEach var="pr" items="${listagem}">
+ 	  <c:forEach var="p" items="${listagem}">
       <tr>
-        <td>${pr.codigo}</td>
-        <td>${pr.nome}</td>
-        <td>${pr.valor}</td>
-        <td><a href="/produto/${id}/excluir">excluir</a></td>
+        <td>${p.codigo}</td>
+        <td>${p.nome}</td>
+        <td>${p.valor}</td>
+        <td><a href="/produto/${p.id}/excluir">excluir</a></td>
       </tr>
       </c:forEach>
     </tbody>

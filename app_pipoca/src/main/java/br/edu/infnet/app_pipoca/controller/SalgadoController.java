@@ -25,6 +25,10 @@ public class SalgadoController {
 		AppProduto.relatorio("Produtos: " +  salgado.getNome() + " adicionado: ", salgado);
 	}
 	
+	public static void excluir(Integer id) {
+		mapSalgados.remove(id);
+	}
+	
 	public static  Collection<Salgado> retornarSalgado(){
 		return mapSalgados.values();
 	}
@@ -35,11 +39,7 @@ public class SalgadoController {
 		return "/salgado/listaSalgado";
 	}
 	
-	public static void excluir(Integer id) {
-		mapSalgados.remove(id);
-	}
-	
-	@GetMapping(value = "/salgado/listaSalgado/{id}/excluir")
+	@GetMapping(value = "/salgado/{id}/excluir")
 	public String exclusaoSalgado(@PathVariable Integer id) {
 		excluir(id);
 		System.out.println("Realizada a exclusão com sucesso!");

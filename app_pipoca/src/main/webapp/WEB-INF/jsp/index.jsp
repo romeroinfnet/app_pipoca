@@ -19,23 +19,23 @@
 	<div class="container-fluid" style="right: 5px;" align="right">
 		<ul class="navbar-nav navbar-right">
 	 		<c:if test="${empty user}">
-	 		<li class="nav-item">
-	 			<a class="nav-link" href="/usuario">Cadastrar</a>
-	 		</li>
-	 		
-	 		<li class="nav-item">
-	 			<a class="nav-link" href="/login">Login</a>
-	 		</li>
-	 		
-	 		</c:if>
+		 		<li class="nav-item">
+		 			<a class="nav-link" href="/cadastro/cadastrarUsuario">Cadastrar</a>
+		 		</li>
+		 		<li class="nav-item">
+		 			<a class="nav-link" href="/login">Login</a>
+		 		</li>
+	 		</c:if>	
+	 	</ul>
+	 	
+	 	<ul class="navbar-nav navbar-right">
 	 		<c:if test="${not empty user}">
-	 		
-	 		<li class="nav-item">
-	 			<a class="nav-link" href="/logout">Logout ${user}</a>
-	 		</li>
-	 		
+	 			<li class="nav-item">
+	 				<a class="nav-link" href="/logout">Logout ${user.nome}</a>
+	 			</li>
 	 		</c:if>
 	 	</ul>
+	 	
 	</div>
 </nav>
 

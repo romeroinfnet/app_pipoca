@@ -23,21 +23,22 @@ public class CompraController {
 		AppProduto.relatorio("Compra ---> " + compra.getCodigo() + " adicionado:", compra);
 	}
 	
-	public static Collection<Compra> retornaLista(){
-		return mapCompra.values();
+	public static void excluir(Integer id) {
+		mapCompra.remove(id);
 	}
 	
-	@GetMapping(value = "/compra/listaCompra")
+	@GetMapping(value = "/compra/")
 	public String TelaCompra(Model model) {
 		model.addAttribute("lista",retornaLista());
 		return "/compra/listaCompra";
 	}
 	
-	public static void excluir(Integer id) {
-		mapCompra.remove(id);
+	public static Collection<Compra> retornaLista(){
+		return mapCompra.values();
 	}
 	
-	@GetMapping(value = "/compra/listaCompra/{id}/excluir")
+	
+	@GetMapping(value = "/compra/{id}/excluir")
 	public String exclusaoCompra(@PathVariable Integer id) {
 		excluir(id);
 		System.out.println("Realizada a exclusão com sucesso!!");

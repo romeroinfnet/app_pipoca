@@ -1,5 +1,7 @@
 package br.edu.infnet.app_pipoca.model.domain;
 
+import java.util.Objects;
+
 import br.edu.infnet.app_pipoca.interfaces.IPrinter;
 import br.edu.infnet.app_pipoca.model.Exception.TamanhoInvalidoException;
 
@@ -15,6 +17,12 @@ public abstract class Produto implements IPrinter{
 	public abstract double calcularValor() throws TamanhoInvalidoException;
 	
 	@Override
+	public void impressao() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	@Override
 	public String toString(){
 		return nome + " " + tamanho + " " + valor + " " + codigo;  
 	}
@@ -28,6 +36,24 @@ public abstract class Produto implements IPrinter{
 	}
 	
 
+	@Override
+	public int hashCode() {
+		return Objects.hash(codigo);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Produto other = (Produto) obj;
+		return codigo == other.codigo;
+	}
+
+	
 	public String getSabor() {
 		return sabor;
 	}
