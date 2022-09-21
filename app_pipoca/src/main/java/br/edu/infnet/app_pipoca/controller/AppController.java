@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
-import com.fasterxml.jackson.annotation.JsonCreator.Mode;
-
 import br.edu.infnet.app_pipoca.model.domain.Usuario;
 import br.edu.infnet.app_pipoca.model.service.UsuarioService;
 
@@ -23,7 +21,7 @@ public class AppController {
 	@Autowired
 	private UsuarioService us;
 	
-	@GetMapping(value = "/")
+	@GetMapping(value = "/index")
 	public String telaHome() {
 		return "index";
 	}
@@ -40,11 +38,11 @@ public class AppController {
 		//if(email.equalsIgnoreCase(senha)) {
 		if(user != null) {
 			model.addAttribute("user",user.getNome());
-			return "index";
-			//return "redirect:/index";
-		}
-		return "login";
-		//return "redirect:/login";
+			//return "/index";
+			return "redirect:/index";
+		} 
+		//return "login";
+		return "redirect:/index";
 	}
 	
 	@GetMapping(value = "logout")

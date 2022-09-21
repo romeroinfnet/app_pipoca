@@ -5,13 +5,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.stream.Stream;
-
-import org.apache.tomcat.util.http.fileupload.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -31,18 +24,18 @@ public class UsuarioTeste implements ApplicationRunner{
 	@Override
 	public void run(ApplicationArguments args) throws CpfInvalidoException, IOException {
 
-	/*	Usuario us = new Usuario();
-		us.setEmail("administrador@gmail.com");
-		us.setNome("administrador");
+		Usuario us = new Usuario();
+		us.setEmail("adm@gmail.com");
+		us.setNome("adm");
 		us.setSenha("123");
-		usuario.incluir(us); */
-			
+		usuario.incluir(us); 
+		
 		//String dir = "C:/Users/romer/Documents/BOLETOS_PÓS_2022/script"; 	
 		//String arq = "Usuarios.txt";
 		//String arq = Files.readString(Paths.get("C:/Users/romer/Documents/BOLETOS_PÓS_2022/script/usuario.txt"), StandardCharsets.UTF_8);
 
 		File dir = new File("C:/dev/");
-		File arq = new File(dir, "Usuarios.txt");
+		File arq = new File(dir, "usuarios.txt");
 		
 		try {
 			

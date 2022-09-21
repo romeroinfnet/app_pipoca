@@ -12,25 +12,38 @@
 
 <c:import url="/WEB-INF/jsp/menu.jsp"/>
 
+
 <h2>COMPRA</h2>
+
+<th> </th>
+<h4>Cadastramento <a href="/compra/cadastrarCompra">NOVO</a></h4>
+<th> </th>
+
 <table class="table">
     <thead class="table-success">
       <tr>
+        <th>Código</th>
         <th>Descrição</th>
         <th>Data</th>
-        <th>Código</th>
+        <th>Cliente</th>
+    	<th></th>
       </tr>
     </thead>
     <tbody>
+       <c:forEach var="cmp" items="${lista}">
       <tr>
-        <td>String</td>
-        <td>date</td>
-        <td>int</td>
+        <td>${cmp.codigo}</td>
+        <td>${cmp.descricao}</td>
+        <td>${cmp.data}</td>
+        <td>${cmp.cliente.nome}</td>
+        <td><a href="/compra/${c.id}/excluir">excluir</a></td>
       </tr>
+      </c:forEach>
     </tbody>
   </table>
 
-  <h2>Detalhes do produto</h2>
+<!-- 
+ <h2>Detalhes do produto</h2>
   <h3>Doce</h3>
 	<table class="table">
     <thead class="table-success">
@@ -53,6 +66,6 @@
       </c:forEach>
     </tbody>
   </table>
-
+ -->
 </body>
 </html>

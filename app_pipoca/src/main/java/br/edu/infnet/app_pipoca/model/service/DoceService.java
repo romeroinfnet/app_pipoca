@@ -7,9 +7,9 @@ import java.util.Map;
 import org.springframework.stereotype.Service;
 
 import br.edu.infnet.app_pipoca.controller.AppProduto;
-import br.edu.infnet.app_pipoca.model.domain.Cliente;
+
 import br.edu.infnet.app_pipoca.model.domain.Doce;
-import br.edu.infnet.app_pipoca.model.domain.Usuario;
+
 
 @Service
 public class DoceService {
@@ -20,7 +20,7 @@ public class DoceService {
 	public void incluir(Doce doce) {
 		doce.setId(id++);
 		mapDoce.put(doce.getId(), doce);
-	 	AppProduto.relatorio("Produto " + doce.getNome() + " adicionado:", doce);
+	 	AppProduto.relatorio("Produto " + doce.getNome() + " adicionado ", doce);
 	}
 	 
 	public void excluir(Integer id) {

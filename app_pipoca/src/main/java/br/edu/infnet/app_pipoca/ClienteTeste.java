@@ -12,12 +12,9 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
 import br.edu.infnet.app_pipoca.controller.AppProduto;
-import br.edu.infnet.app_pipoca.controller.ClienteCotroller;
 import br.edu.infnet.app_pipoca.model.Exception.CpfInvalidoException;
 import br.edu.infnet.app_pipoca.model.domain.Cliente;
-import br.edu.infnet.app_pipoca.model.domain.Usuario;
 import br.edu.infnet.app_pipoca.model.service.ClienteService;
-import br.edu.infnet.app_pipoca.model.service.UsuarioService;
 
 @Component
 public class ClienteTeste implements ApplicationRunner{
@@ -38,8 +35,10 @@ public class ClienteTeste implements ApplicationRunner{
 			cliente1 = new Cliente("Romero","00011122240","romero@romero.com","romero.v");
 			AppProduto.relatorio("Inclusão realizada do cliente:", cliente1);
 			cls.incluir(cliente1);
+			
+			
 			File dir = new File("C:/dev/");
-			File arq = new File(dir, "Usuarios.txt");
+			File arq = new File(dir, "cliente.txt");
 			
 			try {
 				
@@ -70,12 +69,10 @@ public class ClienteTeste implements ApplicationRunner{
 			} finally {
 				System.out.println("Terminuo.");
 			}	 
-		
+				
 		} catch (CpfInvalidoException e) {
 			System.out.println("Erro ao incluir cliente!" + e.getMessage());
 		}
+	} 
 		
-			
-	}
-
 }

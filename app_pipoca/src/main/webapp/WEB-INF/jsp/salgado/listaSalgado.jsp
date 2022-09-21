@@ -17,9 +17,10 @@
 	<table class="table">
     <thead class="table-success">
       <tr>
+      	<th>Sabor</th>
+      	<th>id</th>
         <th>Código</th>
         <th>Nome</th>
-        <th>Sabor</th>
         <th>Tamanho</th>
         <th>Valor</th>
         <th></th>
@@ -29,9 +30,10 @@
     <tbody>
  	  <c:forEach var="s" items="${listagem}">
       <tr>
+      	<td>${s.sabor}</td>
+      	<td>${s.id}</td>
         <td>${s.codigo}</td>
         <td>${s.nome}</td>
-        <td>${s.sabor}</td>
         <td>${s.tamanho}</td>
         <td>${s.valor}</td>
         <td><a href="/salgado/${s.id}/excluir">excluir</a></td>

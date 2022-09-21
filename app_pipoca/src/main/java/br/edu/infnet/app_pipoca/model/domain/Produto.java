@@ -53,9 +53,8 @@ public abstract class Produto implements IPrinter{
 		return codigo == other.codigo;
 	}
 
-	
-	public String getSabor() {
-		return sabor;
+	public String getSabor(String sabor) {
+		return sabor = sabor;
 	}
 	public void setSabor(String sabor) {
 		this.sabor = sabor;

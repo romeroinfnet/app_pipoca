@@ -1,7 +1,7 @@
 package br.edu.infnet.app_pipoca.model.domain;
 
 import java.time.LocalDateTime;
-import java.util.List;
+
 import java.util.Set;
 
 import br.edu.infnet.app_pipoca.interfaces.IPrinter;
@@ -15,7 +15,7 @@ public class Compra implements IPrinter{
 	private Set<Produto> produtos;
 	private Integer id;
 	
-	public Compra(Cliente cliente) {
+	public Compra(Cliente cliente, Set<Produto> produtos2) {
 		this.data = LocalDateTime.now();
 		this.cliente = cliente;
 	}

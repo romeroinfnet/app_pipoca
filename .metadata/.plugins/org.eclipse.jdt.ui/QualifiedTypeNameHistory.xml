@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.lang.Object"/>
-    <fullyQualifiedTypeName name="test.edu.org.br.Prod"/>
-    <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="java.lang.Override"/>
     <fullyQualifiedTypeName name="br.edu.infnet.model.domain.Premium"/>
     <fullyQualifiedTypeName name="br.edu.infnet.model.domain.Produto"/>
@@ -17,7 +14,6 @@
     <fullyQualifiedTypeName name="java.lang.Readable"/>
     <fullyQualifiedTypeName name="br.edu.infnet.app_pipoca.interfaces.IPrinter"/>
     <fullyQualifiedTypeName name="br.edu.infnet.app_pipoca.model.Exception.TamanhoInvalidoException"/>
-    <fullyQualifiedTypeName name="java.util.HashMap"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
     <fullyQualifiedTypeName name="java.util.Map"/>
     <fullyQualifiedTypeName name="java.util.Collection"/>
@@ -33,7 +29,6 @@
     <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
-    <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="br.edu.infnet.app_pipoca.controller.UsuarioCotroller"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
     <fullyQualifiedTypeName name="br.edu.infnet.app_pipoca.model.domain.Usuario"/>
@@ -49,11 +44,20 @@
     <fullyQualifiedTypeName name="java.io.FileReader"/>
     <fullyQualifiedTypeName name="java.io.BufferedReader"/>
     <fullyQualifiedTypeName name="br.edu.infnet.app_pipoca.model.domain.Salgado"/>
-    <fullyQualifiedTypeName name="br.edu.infnet.app_pipoca.model.domain.Ligth"/>
     <fullyQualifiedTypeName name="br.edu.infnet.app_pipoca.model.domain.Doce"/>
-    <fullyQualifiedTypeName name="br.edu.infnet.app_pipoca.model.domain.Compra"/>
-    <fullyQualifiedTypeName name="br.edu.infnet.app_pipoca.controller.CompraController"/>
     <fullyQualifiedTypeName name="br.edu.infnet.app_pipoca.model.domain.Produto"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="br.edu.infnet.app_pipoca.model.domain.Ligth"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="java.lang.Double"/>
+    <fullyQualifiedTypeName name="br.edu.infnet.app_pipoca.model.domain.Compra"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="br.edu.infnet.app_pipoca.model.service.SalgadoService"/>
+    <fullyQualifiedTypeName name="br.edu.infnet.app_pipoca.model.service.LigthService"/>
+    <fullyQualifiedTypeName name="br.edu.infnet.app_pipoca.model.service.PremiumService"/>
+    <fullyQualifiedTypeName name="br.edu.infnet.app_pipoca.model.service.DoceService"/>
+    <fullyQualifiedTypeName name="br.edu.infnet.app_pipoca.controller.CompraController"/>
+    <fullyQualifiedTypeName name="br.edu.infnet.app_pipoca.model.service.CompraService"/>
 </qualifiedTypeNameHistroy>

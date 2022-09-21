@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import br.edu.infnet.app_pipoca.controller.AppProduto;
 import br.edu.infnet.app_pipoca.model.domain.Cliente;
-import br.edu.infnet.app_pipoca.model.domain.Usuario;
+
 
 @Service
 public class ClienteService {
@@ -19,7 +19,7 @@ public class ClienteService {
 	public void incluir(Cliente cliente) {
 		cliente.setId(id++);
 		mapCliente.put(cliente.getId(), cliente);
-	 	AppProduto.relatorio("Produto " + cliente.getNome() + " adicionado:", cliente);
+	 	AppProduto.relatorio("Cliente " + cliente.getNome() + " adicionado:", cliente);
 	}
 	
 	public void excluir(Integer id) {

@@ -1,23 +1,16 @@
 package br.edu.infnet.app_pipoca.controller;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-
-import br.edu.infnet.app_pipoca.model.domain.Ligth;
+import br.edu.infnet.app_pipoca.model.service.LigthService;
 
 @Controller
 public class LigthController {
 
-	private static Map<Integer, Ligth> mapLigth = new HashMap<Integer, Ligth>();
+/*	private static Map<Integer, Ligth> mapLigth = new HashMap<Integer, Ligth>();
 	private  static Integer id = 1;
 	
 
@@ -34,16 +27,19 @@ public class LigthController {
 	public static Collection<Ligth> retornarLista(){
 		return mapLigth.values();
 	}
+	*/
+	@Autowired
+	private LigthService ligthService;
 	
 	@GetMapping(value = "/ligth/listaLigth")
 	public String TelaLigth(Model model) {
-		model.addAttribute("listagem", retornarLista());
+		model.addAttribute("listagem", ligthService.retornarLista());
 		return "/ligth/listaLigth";
 	}
 	
 	@GetMapping(value = "/ligth/{id}/excluir")
 	public String exclusaoLigth(@PathVariable Integer id) {
-		excluir(id);
+		ligthService.excluir(id);
 		System.out.println("Realizada a exclusão com sucesso!");
 		return "redirect:/ligth/listaLigth";
 	}

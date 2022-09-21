@@ -21,13 +21,6 @@ public class Salgado extends Produto{
 	public String toString() {
 		return "Nome: " + getNome() + " || Sabor: " + getSabor() + " || " + getTamanho() + "g ||  Valor com desconto: " + calcularValor();
 	}
-	
-	public String getSabor() {
-		return sabor;
-	}
-	public void setSabor(String sabor) {
-		this.sabor = sabor;
-	}
 
 	@Override
 	public void impressao() {
@@ -35,4 +28,10 @@ public class Salgado extends Produto{
 		
 	}
 	
+	public String getSabor() {
+		return sabor;
+	}
+	public void setSabor(String sabor) {
+		this.sabor = sabor;
+	}
 }

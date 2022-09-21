@@ -25,7 +25,7 @@ public class UsuarioService {
 	
 	public void incluir(Usuario usuario) {
 		mapUsuario.put(usuario.getEmail(), usuario);
-	 	AppProduto.relatorio("Usuário " + usuario.getNome() + " adicionado:", usuario);
+	 	AppProduto.relatorio("Usuário " + usuario.getNome() + " adicionado ", usuario);
 	}
 
 	public static void excluir(String email) {
@@ -35,5 +35,4 @@ public class UsuarioService {
 	public static Collection<Usuario> retornarLista(){
 		return mapUsuario.values();
 	}
-
 }

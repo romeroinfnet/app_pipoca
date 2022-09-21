@@ -1,8 +1,8 @@
 package br.edu.infnet.app_pipoca.model.domain;
 
-import br.edu.infnet.app_pipoca.model.Exception.TamanhoInvalidoException;
-
 public class Doce extends Produto{
+	
+	private String sabor;
 	
 	@Override
 	public double calcularValor() {
@@ -27,8 +27,16 @@ public class Doce extends Produto{
 
 	@Override
 	public void impressao() {
-		// TODO Auto-generated method stub
-		
+		// TODO Auto-generated method stub	
 	}
+	
+	public String getSabor() {
+		return sabor;
+	}
+
+	public void setSabor(String sabor) {
+		this.sabor = sabor;
+	}			
+	
 	
 }

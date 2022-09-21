@@ -1,7 +1,5 @@
 package br.edu.infnet.app_pipoca.model.domain;
 
-import br.edu.infnet.app_pipoca.model.Exception.CpfInvalidoException;
-
 public class Premium extends Produto{
 
 	private String sabor;
@@ -26,14 +24,6 @@ public class Premium extends Produto{
 		
 		return "Nome: " + getNome() + " || Sabor: " + getSabor() + " || " + getTamanho() + "g ||  Valor com desconto: " + calcularValor();  
 	}
-	
-	public String getSabor() {
-		return sabor;
-	}
-	public void setSabor(String sabor) {
-		this.sabor = sabor;
-	}
-
 
 	@Override
 	public void impressao() {
@@ -41,4 +31,11 @@ public class Premium extends Produto{
 		
 	}
 	 
+	public String getSabor() {
+		return sabor;
+	}
+	public void setSabor(String sabor) {
+		this.sabor = sabor;
+	}
+
 }

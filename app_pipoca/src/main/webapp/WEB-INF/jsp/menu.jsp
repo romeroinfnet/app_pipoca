@@ -28,7 +28,7 @@
 		  
 		 	<li class="nav-item"><a class="nav-link" href="/cliente/listaCliente">Cliente</a></li>
 		 	
-		 	<li class="nav-item"><a class="nav-link" href="/WEB-INF/jsp/compra/listaCompra">Compra</a></li>
+		 	<li class="nav-item"><a class="nav-link" href="/compra/listaCompra">Compra</a></li>
 		 	
 		 	<li class="nav-item"><a class="nav-link" href="/doce/listaDoce">Doce</a></li>
 		

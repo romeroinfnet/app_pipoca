@@ -1,15 +1,30 @@
 package br.edu.infnet.app_pipoca.model.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 import br.edu.infnet.app_pipoca.interfaces.IPrinter;
 import br.edu.infnet.app_pipoca.model.Exception.CpfInvalidoException;
 
-public class Cliente implements IPrinter{
 
+@Entity
+@Table(name = "TCliente")
+public class Cliente implements IPrinter{
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
 	private String nome;
 	private String cpf;
 	private String email;
 	private String usuario;
-	private Integer id;
+
+	public Cliente() {
+	
+	}
 	
 	public Cliente( String usuario, String nome, String cpf, String  email) throws CpfInvalidoException {
 		

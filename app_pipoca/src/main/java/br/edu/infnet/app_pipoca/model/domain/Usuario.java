@@ -1,7 +1,7 @@
 package br.edu.infnet.app_pipoca.model.domain;
 
 import br.edu.infnet.app_pipoca.interfaces.IPrinter;
-import br.edu.infnet.app_pipoca.model.Exception.CpfInvalidoException;
+
 
 public class Usuario implements IPrinter{
 
@@ -18,7 +18,7 @@ public class Usuario implements IPrinter{
 	
 	@Override
 	public String toString() {
-		return nome + " " + email + " " + senha;  
+		return email + " " + nome +  " " + senha;  
 	}
 
 

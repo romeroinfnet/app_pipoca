@@ -10,20 +10,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
-import br.edu.infnet.app_pipoca.controller.DoceCotroller;
-import br.edu.infnet.app_pipoca.model.Exception.CpfInvalidoException;
-import br.edu.infnet.app_pipoca.model.Exception.TamanhoInvalidoException;
 import br.edu.infnet.app_pipoca.model.domain.Doce;
-import br.edu.infnet.app_pipoca.model.domain.Usuario;
 import br.edu.infnet.app_pipoca.model.service.DoceService;
-import br.edu.infnet.app_pipoca.model.service.UsuarioService;
 
 @Component
 public class DoceTeste implements ApplicationRunner{
 
-
 	@Autowired
-	private DoceService dcs = new DoceService();
+	private DoceService doceService = new DoceService();
 	
 	@Override
 	public void run(ApplicationArguments args) {
@@ -35,7 +29,7 @@ public class DoceTeste implements ApplicationRunner{
 		d2.setSabor("Chocolate negro");
 		d2.setTamanho(1);
 		d2.setValor(20.00);
-		dcs.incluir(d2);
+		doceService.incluir(d2);
 		
 		Doce d3 = new Doce();
 		d3.setCodigo(102);
@@ -43,10 +37,10 @@ public class DoceTeste implements ApplicationRunner{
 		d3.setSabor("Chocolate ao leite");
 		d3.setTamanho(3);
 		d3.setValor(20.00);
-		dcs.incluir(d3);
+		doceService.incluir(d3);
 		
 		File dir = new File("C:/dev/");
-		File arq = new File(dir, "Usuarios.txt");
+		File arq = new File(dir, "produtos.txt");
 		
 		try {
 			
@@ -60,15 +54,18 @@ public class DoceTeste implements ApplicationRunner{
 					String[] campos = linha.split(";"); 
 					
 					Doce dc = new Doce();
-					//dc.setCodigo(campos[0]);
-					dc.setNome(campos[1]);
-					//dc.setSabor(campos[2]);
-					//dc.setTamanho(campos[3]);
-					//dc.setValor(campos[4]);
-					//usuario.incluir(u);
+					dc.setSabor(campos[0]);
 					
-					System.out.println(linha);
-					linha = leitura.readLine();
+					if("DOCE".equalsIgnoreCase(campos[0])) {	
+						dc.setCodigo(Integer.parseInt(campos[1]));
+						dc.setNome(campos[2]);
+						dc.setTamanho(Integer.parseInt(campos[3]));
+						dc.setValor(Double.parseDouble(campos[4]));
+						doceService.incluir(dc);
+						
+						System.out.println(linha);
+						linha = leitura.readLine();
+					}
 				}
 				System.out.println(leitura.readLine());
 				
@@ -82,8 +79,6 @@ public class DoceTeste implements ApplicationRunner{
 		} finally {
 			System.out.println("Terminuo.");
 		}	 
-	}
-		
 	}
 
 }

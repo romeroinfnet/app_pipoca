@@ -16,11 +16,11 @@ public class AppProduto {
 	
 	public static void main(String[] args) {
 		String dir = "C:/dev/";
-		String arq = "";
+		String arq = "produto";
 		
 		try {
 			try {
-				FileReader fileReader = new FileReader(dir);
+				FileReader fileReader = new FileReader(dir+arq);
 				BufferedReader leitura = new BufferedReader(fileReader);
 				
 				String linha = leitura.readLine();

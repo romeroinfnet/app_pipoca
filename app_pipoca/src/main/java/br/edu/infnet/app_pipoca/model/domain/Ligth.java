@@ -22,6 +22,11 @@ public class Ligth extends Produto{
 		return "Nome: " + getNome() + " || Sabor: " + getSabor() + " || " + getTamanho() + "g ||  Valor com desconto: " + calcularValor();
 	}
 	
+	@Override
+	public void impressao() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	public String getSabor() {
 		return sabor;
@@ -29,11 +34,4 @@ public class Ligth extends Produto{
 	public void setSabor(String sabor) {
 		this.sabor = sabor;
 	}
-
-	@Override
-	public void impressao() {
-		// TODO Auto-generated method stub
-		
-	}
-	
 }
