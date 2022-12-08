@@ -1,2 +1,0 @@
-00322;Choco Cremoso;Chocolate;3;20.30;
-00300;Chocolate Nevado;Chocolate Branco;2;20.50;

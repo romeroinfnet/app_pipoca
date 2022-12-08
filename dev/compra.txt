@@ -1,2 +1,0 @@
-002238;Pedido 1;romero;00011122233;romero@gmail.com;romero.veloso
-002249;Pedido 2;marina;44332211990;marina@gmail.com;marina.veloso

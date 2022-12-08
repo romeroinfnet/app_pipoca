@@ -14,5 +14,4 @@
     <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="br.edu.infnet.app_pipoca.AppPipocaApplication"/>
     <stringAttribute key="org.eclipse.jdt.launching.MODULE_NAME" value="app_pipoca"/>
     <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="app_pipoca"/>
-    <stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.m2e.launchconfig.sourcepathProvider"/>
 </launchConfiguration>

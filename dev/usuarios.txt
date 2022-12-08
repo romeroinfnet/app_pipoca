@@ -1,2 +1,0 @@
-admin@gmail.com;admin;123;
-vitor@gmail.com;vitor;123;

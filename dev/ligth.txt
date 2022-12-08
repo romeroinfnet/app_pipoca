@@ -1,2 +1,0 @@
-00349;Choco 80;Chocolate 80%;3;20.30;
-00330;Musse Morango zero;Morango zero açucar;2;20.50;
