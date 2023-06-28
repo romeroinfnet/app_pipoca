@@ -6,10 +6,9 @@ import java.nio.file.Path;
 public class Produto {
 
 	String nome;
-	Path file;
 	BigDecimal preco;
 	
-	public Produto(String string, Path of, BigDecimal valueOf) {
+	public Produto(String nome, double preco) {
 		// TODO Auto-generated constructor stub
 	}
 
@@ -20,15 +19,7 @@ public class Produto {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	
-	public Path getfile() {
-		return file;
-	}
-
-	public void setFile(Path file) {
-		this.file = file;
-	}
-	
+		
 	public BigDecimal getPreco() {
 		return preco;
 	}

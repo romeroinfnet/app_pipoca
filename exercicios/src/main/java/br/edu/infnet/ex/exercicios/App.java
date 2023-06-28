@@ -22,9 +22,9 @@ public class App {
 
     public static void main(String[] args) {
        
-        Produto produto1 = new Produto("Pão de forma", Path.of("paodeforma.txt"), BigDecimal.valueOf(10.99));
-        Produto produto2 = new Produto("Pizza", Path.of("pizza.txt"), BigDecimal.valueOf(19.99));
-        Produto produto3 = new Produto("Banana", Path.of("banana.txt"), BigDecimal.valueOf(5.99));
+        Produto produto1 = new Produto("Pão de forma", 10.99);
+        Produto produto2 = new Produto("Pizza", 19.99);
+        Produto produto3 = new Produto("farofa", 9.00);
 
        
         Cliente cliente1 = new Cliente("Maria Silva");
@@ -40,12 +40,12 @@ public class App {
         List<Produto> produtos2 = new ArrayList<Produto>();
         produtos2.add(produto2);
         produtos2.add(produto3);
-        Pagamento pagamento2 = new Pagamento(produtos2, getYesterdayDate(), cliente3);
+        Pagamento pagamento2 = new Pagamento(produtos2, getDataDiaAnterior(), cliente3);
 
         List<Produto> produtos3 = new ArrayList<Produto>();
         produtos3.add(produto3);
         produtos2.add(produto1);
-        Pagamento pagamento3 = new Pagamento(produtos3, getOneMonthAgoDate(), cliente2);
+        Pagamento pagamento3 = new Pagamento(produtos3, getDataMesAnterior(), cliente2);
 
         List<Pagamento> pagamentos = new ArrayList<Pagamento>();
         pagamentos.add(pagamento1);
@@ -60,26 +60,26 @@ public class App {
         // Assinatura 1 - Em andamento
         Assinatura assinatura1 = new Assinatura(valorMensalidade, LocalDate.now());
         System.out.println("Assinatura 1 - Mensalidade: " + assinatura1.getMensalidade()
-                + " - Início: " + assinatura1.getBegin()
-                + " - Encerrada: " + assinatura1.isEncerrada());
+                + " - Início: " + assinatura1.getDataInicial()
+                + " - Encerrada: " + assinatura1.Encerrada());
 
         // Assinatura 2 - Encerrada
-        LocalDate begin2 = LocalDate.now().minusMonths(3);
-        LocalDate end2 = LocalDate.now().minusMonths(1);
-        Assinatura assinatura2 = new Assinatura(valorMensalidade, begin2, end2);
+        LocalDate dataInicial1 = LocalDate.now().minusMonths(3);
+        LocalDate dataFinal1 = LocalDate.now().minusMonths(1);
+        Assinatura assinatura2 = new Assinatura(valorMensalidade, dataInicial1, dataFinal1);
         System.out.println("Assinatura 2 - Mensalidade: " + assinatura2.getMensalidade()
-                + " - Início: " + assinatura2.getBegin()
-                + " - Fim: " + assinatura2.getEnd()
-                + " - Encerrada: " + assinatura2.isEncerrada());
+                + " - Início: " + assinatura2.getDataInicial()
+                + " - Fim: " + assinatura2.getDataFinal()
+                + " - Encerrada: " + assinatura2.Encerrada());
 
         // Assinatura 3 - Encerrada
-        LocalDate begin3 = LocalDate.now().minusMonths(6);
-        LocalDate end3 = LocalDate.now().minusMonths(4);
-        Assinatura assinatura3 = new Assinatura(valorMensalidade, begin3, end3);
+        LocalDate dataInicial2 = LocalDate.now().minusMonths(6);
+        LocalDate dataFinal2 = LocalDate.now().minusMonths(4);
+        Assinatura assinatura3 = new Assinatura(valorMensalidade, dataInicial2, dataFinal2);
         System.out.println("Assinatura 3 - Mensalidade: " + assinatura3.getMensalidade()
-                + " - Início: " + assinatura3.getBegin()
-                + " - Fim: " + assinatura3.getEnd()
-                + " - Encerrada: " + assinatura3.isEncerrada());
+                + " - Início: " + assinatura3.getDataInicial()
+                + " - Fim: " + assinatura3.getDataFinal()
+                + " - Encerrada: " + assinatura3.Encerrada());
         
         //Uso do  Collection e lambda para aprimir pagamentos
         Collections.sort(pagamentos, (p1, p2) -> p1.getDataCompra().compareTo(p2.getDataCompra()));
@@ -238,7 +238,7 @@ public class App {
 	     // Calcular o tempo em meses da assinatura ainda ativa
 	        LocalDate dataAtual = LocalDate.now();
 	        Assinatura assinatura = null;
-			Period periodo = Period.between(assinatura.getBegin(), dataAtual);
+			Period periodo = Period.between(assinatura.getDataInicial(), dataAtual);
 	        int mesesAtivos = periodo.getMonths();
 
 	        // Imprimir o tempo em meses da assinatura ativa
@@ -263,13 +263,13 @@ public class App {
   //====================================================================
   //Imprima o tempo de meses entre o start e end de todas assinaturas.
   private static long calcularTempoEmMeses(Assinatura assinatura) {
-	  LocalDate inicio = assinatura.getBegin();
-	  LocalDate fim = assinatura.getEnd();
+	  LocalDate inicio = assinatura.getDataInicial();
+	  LocalDate fim = assinatura.getDataFinal();
 
-	  LocalDateTime inicioDateTime = inicio.atStartOfDay();
-	  LocalDateTime fimDateTime = fim != null ? fim.atStartOfDay() : LocalDateTime.now();
+	  LocalDateTime DataInicial = inicio.atStartOfDay();
+	  LocalDateTime DataFinal = fim != null ? fim.atStartOfDay() : LocalDateTime.now();
 
-	  Duration duracao = Duration.between(inicioDateTime, fimDateTime);
+	  Duration duracao = Duration.between(DataInicial, DataFinal);
 	  return duracao.toDays() / 30;
   }
        
@@ -277,7 +277,7 @@ public class App {
   //Cacular assinaturas pagas
   private static BigDecimal calcularValorPago(Assinatura assinatura) {
      BigDecimal mensalidade = assinatura.getMensalidade();
-     LocalDate inicio = assinatura.getBegin();
+     LocalDate inicio = assinatura.getDataInicial();
      LocalDate hoje = LocalDate.now();
 
      Period periodo = Period.between(inicio, hoje);
@@ -288,12 +288,12 @@ public class App {
   }
 
     
-    private static Date getYesterdayDate() {
+    private static Date getDataDiaAnterior() {
         LocalDate yesterday = LocalDate.now().minus(1, ChronoUnit.DAYS);
         return java.sql.Date.valueOf(yesterday);
     }
 
-    private static Date getOneMonthAgoDate() {
+    private static Date getDataMesAnterior() {
         LocalDate oneMonthAgo = LocalDate.now().minus(1, ChronoUnit.MONTHS);
         return java.sql.Date.valueOf(oneMonthAgo);
     }

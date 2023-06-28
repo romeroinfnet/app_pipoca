@@ -5,18 +5,18 @@ import java.time.LocalDate;
 
 public class Assinatura {
 	  private BigDecimal mensalidade;
-	    private LocalDate begin;
-	    private LocalDate end;
+	    private LocalDate dataFinal;
+		private LocalDate dataInicial;
 
-	    public Assinatura(BigDecimal mensalidade, LocalDate begin) {
+	    public Assinatura(BigDecimal mensalidade, LocalDate dataInicial) {
 	        this.mensalidade = mensalidade;
-	        this.begin = begin;
+	        this.dataInicial = dataInicial;
 	    }
 
-	    public Assinatura(BigDecimal mensalidade, LocalDate begin, LocalDate end) {
+	    public Assinatura(BigDecimal mensalidade, LocalDate dataInicial, LocalDate dataFinal) {
 	        this.mensalidade = mensalidade;
-	        this.begin = begin;
-	        this.end = end;
+	        this.dataInicial = dataInicial;
+	        this.dataFinal = dataFinal;
 	    }
 
 	    public BigDecimal getMensalidade() {
@@ -27,24 +27,24 @@ public class Assinatura {
 	        this.mensalidade = mensalidade;
 	    }
 
-	    public LocalDate getBegin() {
-	        return begin;
+	    public LocalDate getDataInicial() {
+	        return dataInicial;
 	    }
 
-	    public void setBegin(LocalDate begin) {
-	        this.begin = begin;
+	    public void setDataInicial(LocalDate dataInicial) {
+	        this.dataInicial = dataInicial;
 	    }
 
-	    public LocalDate getEnd() {
-	        return end;
+	    public LocalDate getDataFinal() {
+	        return dataFinal;
 	    }
 
-	    public void setEnd(LocalDate end) {
-	        this.end = end;
+	    public void setDataFinal(LocalDate dataFinal) {
+	        this.dataFinal = dataFinal;
 	    }
 
-	    public boolean isEncerrada() {
-	        return end != null;
+	    public boolean Encerrada() {
+	        return dataFinal != null;
 	    }
 	    
 }
